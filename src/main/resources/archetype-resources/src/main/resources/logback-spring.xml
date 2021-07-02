@@ -1,0 +1,48 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+    <appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"app":"consultant360"}</customFields>
+            <fieldNames>
+                <timestamp>timestamp</timestamp>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+            </fieldNames>
+        </encoder>
+    </appender>
+<!--    Make sure to add prod when needed-->
+    <springProfile name="prod | uat">
+        <root level="info">
+            <appender-ref ref="JSON" />
+        </root>
+     
+        <logger name="${package}" level="info" additivity="false">
+            <appender-ref ref="JSON" />
+        </logger>
+    
+        <logger name="org.hibernate.SQL" level="error" additivity="false">
+            <appender-ref ref="JSON" />
+        </logger>
+    </springProfile>
+    <springProfile name="!prod &amp; !uat">
+        <root level="info">
+            <appender-ref ref="CONSOLE" />
+        </root>
+     
+        <logger name="${package}" level="info" additivity="false">
+            <appender-ref ref="CONSOLE" />
+        </logger>
+    
+        <logger name="org.hibernate.SQL" level="error" additivity="false">
+            <appender-ref ref="CONSOLE" />
+        </logger>
+    </springProfile>
+    
+ 
+</configuration>

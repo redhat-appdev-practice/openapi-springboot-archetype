@@ -1,0 +1,37 @@
+---
+spring:
+  datasource:
+    username: ${POSTGRES_USERNAME:test_user}
+    password: ${POSTGRES_PASSWORD:password}
+    url: jdbc:postgresql://${DB_SERVICE_NAME:surveydb}:5432/${POSTGRES_DATABASE_NAME:surveydb}
+    driver-class-name: org.postgresql.Driver
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api-docs
+
+logging:
+  level:
+    com.redhat.consultant360: INFO
+    org.hibernate.SQL: ERROR
+
+management:
+  endpoint:
+    health:
+      group:
+        readiness:
+          include: db
+        liveness:
+          include: ping
