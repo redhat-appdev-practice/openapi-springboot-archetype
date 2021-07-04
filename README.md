@@ -14,9 +14,9 @@ mvn archetype:generate -DarchetypeGroupId=com.redhat.runtimes \
                        -DarchetypeVersion=1.0.0-SNAPSHOT \
                        -Dpackage=com.redhat.runtimes \
                        -DgroupId=com.redhat.runtimes.springboot \
-                       -DartifactId=springboot-cms \
+                       -DartifactId=springboot-petstore \
                        -Dversion=0.0.1-SNAPSHOT \
-                       -Dopenapi_app_contract_uri=https://studio-ws.apicur.io/sharing/fb9d632f-6777-44c6-a22e-0a33d88a1d52?content=true \
+                       -Dopenapi_app_contract_uri=https://petstore.swagger.io/v2/swagger.yaml \
                        -Dinteractive=false
 ```
 
