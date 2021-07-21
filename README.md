@@ -5,13 +5,9 @@ Following a [Contract-First API Development Approach](https://bit.ly/contract-fi
 ## Using This Archetype
 
 ```bash
-git clone https://github.com/redhat-appdev-practice/openapi-springboot-archetype.git
-cd openapi-springboot-archetype
-mvn install
-cd <workspace>
-mvn archetype:generate -DarchetypeGroupId=com.redhat.runtimes \
+mvn archetype:generate -DarchetypeGroupId=com.redhat.consulting \
                        -DarchetypeArtifactId=openapi-spring-archetype \
-                       -DarchetypeVersion=1.0.0-SNAPSHOT \
+                       -DarchetypeVersion=1.0.2 \
                        -Dpackage=com.redhat.runtimes \
                        -DgroupId=com.redhat.runtimes.springboot \
                        -DartifactId=springboot-petstore \
