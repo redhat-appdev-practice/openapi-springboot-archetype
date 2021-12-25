@@ -20,7 +20,7 @@ In order to avoid wasting your time and ours, it is recommended that you submit 
 ```bash
 mvn archetype:generate -DarchetypeGroupId=com.redhat.consulting \
                        -DarchetypeArtifactId=openapi-spring-archetype \
-                       -DarchetypeVersion=1.0.2 \
+                       -DarchetypeVersion=1.0.3 \
                        -Dpackage=com.redhat.runtimes \
                        -DgroupId=com.redhat.runtimes.springboot \
                        -DartifactId=springboot-petstore \
