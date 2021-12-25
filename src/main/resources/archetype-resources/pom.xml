@@ -6,21 +6,21 @@
     <packaging>jar</packaging>
     <version>${version}</version>
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <springfox-version>2.9.2</springfox-version>
+        <springfox-version>3.0.0</springfox-version>
         <pitest.version>1.5.1</pitest.version>
         <sonar.exclusions>src/gen/java/**</sonar.exclusions>
         <container.ip>127.0.0.1</container.ip>
         <jkube.version>1.3.0</jkube.version>
         <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
-        <scm.url>https://gitlab.consulting.redhat.com/appdev-coe/consultant-360-feedback/survey-openapi-spring-service</scm.url>
+        <scm.url>https://github.com/redhat-appdev-practice/openapi-springboot-archetype</scm.url>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>2.6.2.RELEASE</version>
     </parent>
     <scm>
         <connection>scm:git:${scm.url}.git</connection>
